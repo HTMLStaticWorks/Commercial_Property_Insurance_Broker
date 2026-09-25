@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | FastFund</title>
+  <meta name="description" content="Get in touch with our financing advisors.">
+  <meta name="theme-color" content="#0E1A2B">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Apply saved theme / direction before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('fastfund-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        if (localStorage.getItem('fastfund-rtl') === 'true') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,250..600;1,9..144,250..600&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay"></div>
+
+  <!-- Header & Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index.html" class="logo" aria-label="FastFund home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+          <span class="logo-text">Fast<em>Fund</em></span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="home2.html" class="nav-link">Home 2</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="loan-calculator.html" class="nav-link">Loan Calculator</a></li>
+            <li><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+          <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+          <a href="login.html" class="btn btn-primary btn-sm nav-cta">Login</a>
+          <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <aside class="nav-drawer" aria-label="Mobile menu">
+    <div class="drawer-header">
+      <a href="index.html" class="logo" aria-label="FastFund home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+          <span class="logo-text">Fast<em>Fund</em></span>
+        </a>
+      <button class="icon-btn drawer-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+
+    <ul class="drawer-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="home2.html" class="nav-link">Home 2</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="loan-calculator.html" class="nav-link">Loan Calculator</a></li>
+      <li><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+    </ul>
+
+    <div class="drawer-actions">
+      <a href="login.html" class="btn btn-primary btn-block">Login</a>
+      <div class="drawer-toggles">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <section class="page-hero hero bg-soft">
+      <div class="container">
+        <span class="eyebrow anim-in">Contact</span>
+        <h1 class="anim-in" style="--d: .1s">Let's talk about your <span class="hl">next move</span></h1>
+        <p class="lead anim-in" style="--d: .2s">Our financing advisors are ready to answer your questions and guide you through the application process.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="card contact-form anim-in" style="--d: .25s;">
+          <h3>Send a message</h3>
+          <p style="margin-block-end: var(--sp-8);">We typically reply within one business day.</p>
+          <!-- Formspree placeholder -->
+          <form class="needs-validation" action="https://formspree.io/f/placeholder" method="POST" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="name">Full name</label>
+                <input type="text" class="form-control" id="name" placeholder="Jane Cooper" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Work email</label>
+                <input type="email" class="form-control" id="email" placeholder="jane@company.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject</label>
+              <select class="form-control" id="subject" required>
+                <option value="">Select a topic</option>
+                <option value="equipment">Equipment Financing</option>
+                <option value="working-capital">Working Capital</option>
+                <option value="other">Other Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Tell us a little about your business and funding goals" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Send message <i class="ph ph-arrow-right"></i></button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-list anim-in" style="--d: .3s">
+            <div class="contact-item">
+              <div class="card-icon"><i class="ph ph-map-pin"></i></div>
+              <div>
+                <h4>Corporate Headquarters</h4>
+                <p>100 Finance Plaza, Suite 400<br>New York, NY 10004</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="card-icon"><i class="ph ph-phone"></i></div>
+              <div>
+                <h4>Call Us</h4>
+                <p><span class="force-ltr">1-800-555-FUND</span><br>Mon&ndash;Fri, 9am &ndash; 6pm EST</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="card-icon"><i class="ph ph-envelope-simple"></i></div>
+              <div>
+                <h4>Email Us</h4>
+                <p><a class="link" href="mailto:advisors@fastfund.com">advisors@fastfund.com</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="card-icon"><i class="ph ph-share-network"></i></div>
+              <div>
+                <h4>Follow Us</h4>
+                <p style="margin-block-end: var(--sp-3);">News, funding tips and client stories.</p>
+                <div class="socials">
+                  <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+                  <a href="#" aria-label="X (Twitter)"><i class="ph ph-x-logo"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Map -->
+    <section class="section" style="padding-block-start: 0;">
+      <div class="container">
+        <div class="map-panel reveal">
+          <iframe
+            src="https://www.google.com/maps?q=Financial+District,+New+York,+NY+10004&z=15&output=embed"
+            title="FastFund headquarters on Google Maps"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+          <div class="map-card">
+            <div class="card-icon"><i class="ph ph-map-pin"></i></div>
+            <div>
+              <strong>100 Finance Plaza, Suite 400</strong>
+              <span>New York, NY 10004</span>
+              <a class="link" href="https://www.google.com/maps/dir/?api=1&destination=Financial+District,+New+York,+NY+10004" target="_blank" rel="noopener">Get directions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="FastFund home">
+            <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+            <span class="logo-text">Fast<em>Fund</em></span>
+          </a>
+          <p class="footer-desc">Empowering growing businesses with fast, flexible, and transparent capital solutions tailored for your momentum.</p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="#" aria-label="X"><i class="ph ph-x-logo"></i></a>
+            <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Equipment Financing</a></li>
+            <li><a href="services.html">Working Capital</a></li>
+            <li><a href="services.html">Lines of Credit</a></li>
+            <li><a href="services.html">Commercial Loans</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#story">About Our Story</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Client Portal</a></li>
+            <li><a href="loan-calculator.html">Loan Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter-col">
+          <h4 class="footer-col-title">Stay Informed</h4>
+          <p class="newsletter-desc">Subscribe to receive market trends, rate updates, and capital strategy guides.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to FastFund!');">
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="Enter your business email" required aria-label="Email Address">
+              <button type="submit" aria-label="Subscribe"><i class="ph ph-arrow-right"></i></button>
+            </div>
+          </form>
+          <div class="footer-badge">
+            <i class="ph ph-shield-check"></i>
+            <span>256-Bit Bank Grade Encryption</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 FastFund Brokerage LLC. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#">Terms of Service</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

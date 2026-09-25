@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Dashboard | FastFund</title>
+  <meta name="description" content="Manage your funding applications and repayment schedules.">
+  <meta name="theme-color" content="#0E1A2B">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Apply saved theme / direction before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('fastfund-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        if (localStorage.getItem('fastfund-rtl') === 'true') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,250..600;1,9..144,250..600&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="dashboardSidebar" aria-label="Dashboard navigation">
+    <div class="sidebar-brand">
+      <a href="index.html" class="logo" aria-label="FastFund home">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+        <span class="logo-text">Fast<em>Fund</em></span>
+      </a>
+      <button class="icon-btn sidebar-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul class="sidebar-menu">
+        <li><a href="#overview" class="sidebar-link active" data-view="overview" aria-current="page"><i class="ph ph-squares-four"></i> Overview</a></li>
+        <li><a href="#tracker" class="sidebar-link" data-view="tracker"><i class="ph ph-chart-line-up"></i> Application Tracker</a></li>
+        <li><a href="#new-application" class="sidebar-link" data-view="new-application"><i class="ph ph-file-plus"></i> New Application</a></li>
+        <li><a href="#documents" class="sidebar-link" data-view="documents"><i class="ph ph-folder-open"></i> Document Upload</a></li>
+        <li><a href="#offers" class="sidebar-link" data-view="offers"><i class="ph ph-scales"></i> Offer Comparison</a></li>
+        <li><a href="#repayment" class="sidebar-link" data-view="repayment"><i class="ph ph-calendar-check"></i> Repayment Schedule</a></li>
+        <li><a href="#profile" class="sidebar-link" data-view="profile"><i class="ph ph-user-circle"></i> Profile / Settings</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-foot">
+      <a href="login.html" class="sidebar-link"><i class="ph ph-sign-out"></i> Logout</a>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop"></div>
+
+  <!-- Top bar -->
+  <header class="dash-header">
+    <div class="dash-header-start">
+      <button class="icon-btn dash-menu-btn" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+      <a href="index.html" class="logo" aria-label="FastFund home">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+        <span class="logo-text">Fast<em>Fund</em></span>
+      </a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+      <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+      <a href="#profile" class="avatar-btn" data-view="profile" aria-label="Account: Apex Manufacturing"><i class="ph ph-user"></i></a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="dashboard-content">
+    <div class="dashboard-inner">
+
+      <!-- ============================== Overview ============================== -->
+      <section class="dash-view" data-view="overview" data-title="Overview">
+        <div class="dashboard-welcome">
+          <h1>Welcome back, <span class="hl">Apex!</span></h1>
+          <p>Here&rsquo;s the latest on your FastFund financing.</p>
+        </div>
+
+        <div class="status-grid">
+          <div class="status-card">
+            <div class="status-label">Application Status</div>
+            <div class="status-main">
+              <span class="pill">Offers Ready</span>
+              <div class="status-sub">Equipment Financing</div>
+            </div>
+          </div>
+          <div class="status-card">
+            <div class="status-label">Next Payment</div>
+            <div class="status-main">
+              <div class="status-value">Oct 1</div>
+              <div class="status-sub force-ltr">$2,450.00 &middot; Loan #L-552</div>
+            </div>
+          </div>
+          <div class="status-card">
+            <div class="status-label">Offer Window</div>
+            <div class="status-main">
+              <div class="status-value is-accent">Closes Soon</div>
+              <div class="status-sub">Ends Thursday at 8PM</div>
+            </div>
+          </div>
+        </div>
+
+        <section class="dash-banner theme-ink">
+          <h2>Your offers are ready!</h2>
+          <p>You have 2 funding offers waiting for your $150,000 Equipment Financing application.</p>
+          <a href="#offers" class="btn btn-light" data-view="offers">Compare Offers</a>
+        </section>
+      </section>
+
+      <!-- ========================= Application Tracker ========================= -->
+      <section class="dash-view" data-view="tracker" data-title="Application Tracker" hidden>
+        <div class="view-head">
+          <span class="eyebrow">Application Tracker</span>
+          <h1>Track your <span class="hl">application</span></h1>
+          <p>Follow Application #APP-84920 from submission to funding.</p>
+        </div>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <h3>Equipment Financing</h3>
+              <p>Application #APP-84920 &middot; Submitted Sep 18, 2026</p>
+            </div>
+            <span class="badge badge-success">In progress</span>
+          </div>
+
+          <div class="pipeline-tracker">
+            <div class="pipeline-step completed">
+              <div class="step-icon"><i class="ph-bold ph-check"></i></div>
+              <div class="step-label">Submitted</div>
+              <div class="step-date">Sep 18</div>
+            </div>
+            <div class="pipeline-step completed">
+              <div class="step-icon"><i class="ph-bold ph-check"></i></div>
+              <div class="step-label">Under Review</div>
+              <div class="step-date">Sep 20</div>
+            </div>
+            <div class="pipeline-step active">
+              <div class="step-icon"><i class="ph ph-file-text"></i></div>
+              <div class="step-label">Offers Received</div>
+              <div class="step-date">Today</div>
+            </div>
+            <div class="pipeline-step">
+              <div class="step-icon"><i class="ph ph-bank"></i></div>
+              <div class="step-label">Approved / Funded</div>
+              <div class="step-date">Pending</div>
+            </div>
+          </div>
+        </section>
+
+        <div class="dash-grid">
+          <section class="panel">
+            <div class="panel-head"><div><h3>Application details</h3></div></div>
+            <ul class="spec-list" style="margin-block-start: 0;">
+              <li><span>Product</span><span>Equipment Financing</span></li>
+              <li><span>Amount requested</span><span class="force-ltr">$150,000</span></li>
+              <li><span>Use of funds</span><span>CNC machining center</span></li>
+              <li><span>Advisor</span><span>Daniel Brooks</span></li>
+            </ul>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><div><h3>Next step</h3><p>Review your offers before the window closes Thursday at 8PM.</p></div></div>
+            <a href="#offers" class="btn btn-primary" data-view="offers">Compare offers <i class="ph ph-arrow-right"></i></a>
+          </section>
+        </div>
+      </section>
+
+      <!-- =========================== New Application =========================== -->
+      <section class="dash-view" data-view="new-application" data-title="New Application" hidden>
+        <div class="view-head">
+          <span class="eyebrow">New Application</span>
+          <h1>Request <span class="hl">new funding</span></h1>
+          <p>Your business details are already on file. This takes under two minutes.</p>
+        </div>
+
+        <section class="panel panel-narrow">
+          <form class="needs-validation" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="appProduct">Product</label>
+              <select class="form-control" id="appProduct" required>
+                <option value="">Select a product</option>
+                <option value="equipment">Equipment Financing</option>
+                <option value="working-capital">Working Capital</option>
+                <option value="credit-line">Line of Credit</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="appAmount">Amount requested ($)</label>
+              <input type="number" class="form-control force-ltr" id="appAmount" min="10000" step="1000" placeholder="100000" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="appPurpose">Use of funds</label>
+              <textarea class="form-control" id="appPurpose" rows="4" placeholder="e.g. New CNC machine for the second production line" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Submit application <i class="ph ph-arrow-right"></i></button>
+          </form>
+        </section>
+      </section>
+
+      <!-- =========================== Document Upload =========================== -->
+      <section class="dash-view" data-view="documents" data-title="Document Upload" hidden>
+        <div class="view-head">
+          <span class="eyebrow">Document Upload</span>
+          <h1>Your <span class="hl">documents</span></h1>
+          <p>Upload your latest bank statements to keep your application moving.</p>
+        </div>
+
+        <div class="dash-grid">
+          <section class="panel">
+            <div class="panel-head"><div><h3>Upload a document</h3><p>PDF, JPG or PNG &middot; up to 5MB</p></div></div>
+            <form id="docUploadForm" action="/api/upload" method="POST">
+              <!-- UPLOAD_ENDPOINT -->
+              <div class="form-group">
+                <input type="file" class="form-control" id="documentFile" accept=".pdf, .png, .jpg, .jpeg" required>
+                <div id="fileError" class="invalid-feedback" style="display: none;"></div>
+              </div>
+              <button type="submit" class="btn btn-primary"><i class="ph ph-upload-simple"></i> Upload document</button>
+            </form>
+
+            <ul class="doc-list">
+              <li>
+                <span><i class="ph ph-file-pdf"></i> Q2_Financials.pdf</span>
+                <span class="badge badge-success">Verified</span>
+              </li>
+              <li>
+                <span><i class="ph ph-file-pdf"></i> ID_Verification.pdf</span>
+                <span class="badge badge-success">Verified</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head"><div><h3>Required documents</h3><p>2 of 3 complete</p></div></div>
+            <ul class="req-list">
+              <li class="done"><i class="ph-bold ph-check"></i> Q2 financial statements</li>
+              <li class="done"><i class="ph-bold ph-check"></i> Government-issued ID</li>
+              <li><i class="ph ph-circle"></i> Last 3 months of bank statements</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <!-- =========================== Offer Comparison =========================== -->
+      <section class="dash-view" data-view="offers" data-title="Offer Comparison" hidden>
+        <div class="view-head">
+          <span class="eyebrow">Offer Comparison</span>
+          <h1>Compare your <span class="hl">offers</span></h1>
+          <p>Two lenders have made offers on your $150,000 request. The window closes Thursday at 8PM.</p>
+        </div>
+
+        <div class="dash-grid">
+          <div class="offer card-featured">
+            <span class="card-tag">Recommended</span>
+            <h4>Lender A &middot; Term Loan</h4>
+            <div class="offer-specs">
+              <div><span>Amount</span><strong class="force-ltr">$150,000</strong></div>
+              <div><span>Rate</span><strong class="force-ltr">7.5%</strong></div>
+              <div><span>Term</span><strong class="force-ltr">36 mos</strong></div>
+              <div><span>Monthly</span><strong class="force-ltr">$4,666</strong></div>
+            </div>
+            <button class="btn btn-primary btn-block">Accept offer</button>
+          </div>
+
+          <div class="offer">
+            <h4>Lender B &middot; Equipment</h4>
+            <div class="offer-specs">
+              <div><span>Amount</span><strong class="force-ltr">$150,000</strong></div>
+              <div><span>Rate</span><strong class="force-ltr">8.2%</strong></div>
+              <div><span>Term</span><strong class="force-ltr">48 mos</strong></div>
+              <div><span>Monthly</span><strong class="force-ltr">$3,678</strong></div>
+            </div>
+            <button class="btn btn-outline btn-block">Accept offer</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================== Repayment Schedule ========================== -->
+      <section class="dash-view" data-view="repayment" data-title="Repayment Schedule" hidden>
+        <div class="view-head">
+          <span class="eyebrow">Repayment Schedule</span>
+          <h1>Loan <span class="hl">#L-552</span></h1>
+          <p>Your payment history and upcoming installments.</p>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi">
+            <div class="kpi-label">Remaining balance <i class="ph ph-wallet"></i></div>
+            <div class="kpi-value force-ltr">$41,650</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Paid to date <i class="ph ph-check-circle"></i></div>
+            <div class="kpi-value force-ltr">$46,550</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Next payment <i class="ph ph-calendar-blank"></i></div>
+            <div class="kpi-value">Oct 1</div>
+          </div>
+        </div>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div><h3>Payment history</h3></div>
+            <a href="#" class="btn btn-outline btn-sm"><i class="ph ph-download-simple"></i> Export</a>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-stack">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Payment Amount</th>
+                  <th>Principal</th>
+                  <th>Interest</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Date">Oct 1, 2026</td>
+                  <td class="force-ltr" data-label="Payment">$2,450.00</td>
+                  <td class="force-ltr" data-label="Principal">$2,100.00</td>
+                  <td class="force-ltr" data-label="Interest">$350.00</td>
+                  <td data-label="Status"><span class="badge badge-warning">Upcoming</span></td>
+                </tr>
+                <tr>
+                  <td data-label="Date">Sep 1, 2026</td>
+                  <td class="force-ltr" data-label="Payment">$2,450.00</td>
+                  <td class="force-ltr" data-label="Principal">$2,080.00</td>
+                  <td class="force-ltr" data-label="Interest">$370.00</td>
+                  <td data-label="Status"><span class="badge badge-success">Paid</span></td>
+                </tr>
+                <tr>
+                  <td data-label="Date">Aug 1, 2026</td>
+                  <td class="force-ltr" data-label="Payment">$2,450.00</td>
+                  <td class="force-ltr" data-label="Principal">$2,060.00</td>
+                  <td class="force-ltr" data-label="Interest">$390.00</td>
+                  <td data-label="Status"><span class="badge badge-success">Paid</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <!-- =========================== Profile / Settings =========================== -->
+      <section class="dash-view" data-view="profile" data-title="Profile / Settings" hidden>
+        <div class="view-head">
+          <span class="eyebrow">Profile / Settings</span>
+          <h1>Your <span class="hl">profile</span></h1>
+          <p>Keep your business details up to date.</p>
+        </div>
+
+        <section class="panel panel-narrow">
+          <form class="needs-validation" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="profBusiness">Business name</label>
+                <input type="text" class="form-control" id="profBusiness" value="Apex Manufacturing" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profContact">Primary contact</label>
+                <input type="text" class="form-control" id="profContact" value="Sarah Jenkins" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="profEmail">Work email</label>
+              <input type="email" class="form-control force-ltr" id="profEmail" value="sarah@apexmfg.com" required>
+            </div>
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="profNotify" checked>
+              <label for="profNotify">Email me when new offers arrive or a payment is due.</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </form>
+        </section>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+
+  <script>
+    // Dashboard sidebar drawer (1024px and below)
+    const sidebar = document.querySelector('.sidebar');
+    const backdrop = document.querySelector('.sidebar-backdrop');
+    const setSidebar = (open) => {
+      sidebar.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    document.querySelector('.dash-menu-btn').addEventListener('click', () => setSidebar(true));
+    document.querySelector('.sidebar-close').addEventListener('click', () => setSidebar(false));
+    backdrop.addEventListener('click', () => setSidebar(false));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setSidebar(false); });
+
+    // One view at a time: each sidebar item shows its own page
+    const views = [...document.querySelectorAll('.dash-view')];
+    const navLinks = [...sidebar.querySelectorAll('.sidebar-link[data-view]')];
+
+    const showView = (name) => {
+      const view = views.find(v => v.dataset.view === name) || views[0];
+      views.forEach(v => { v.hidden = v !== view; });
+      navLinks.forEach(l => {
+        const on = l.dataset.view === view.dataset.view;
+        l.classList.toggle('active', on);
+        if (on) l.setAttribute('aria-current', 'page'); else l.removeAttribute('aria-current');
+      });
+      document.title = `${view.dataset.title} | FastFund`;
+      window.scrollTo(0, 0);
+      setSidebar(false);
+    };
+
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[data-view]');
+      if (!link) return;
+      e.preventDefault();
+      history.pushState(null, '', '#' + link.dataset.view);
+      showView(link.dataset.view);
+    });
+
+    window.addEventListener('popstate', () => showView(location.hash.slice(1)));
+    showView(location.hash.slice(1) || 'overview');
+  </script>
+</body>
+</html>

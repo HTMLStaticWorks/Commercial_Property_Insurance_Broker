@@ -1,0 +1,47 @@
+/*
+ * FastFund - RTL Style Sheet
+ * Overrides for Right-To-Left language support
+ */
+
+/* The main layout uses logical properties (margin-inline, padding-inline, inset-inline).
+   This file covers things that cannot be solved purely with logical properties. */
+
+/* Flip directional icons */
+html[dir="rtl"] .ph-arrow-right,
+html[dir="rtl"] .ph-arrow-up-right,
+html[dir="rtl"] .ph-caret-right {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .btn:hover i.ph-arrow-right,
+html[dir="rtl"] .btn:hover i.ph-arrow-up-right {
+  transform: scaleX(-1) translateX(3px);
+}
+
+/* Nav drawer slides in from the left */
+html[dir="rtl"] .nav-drawer {
+  right: auto;
+  left: var(--sp-3);
+  transform: translateX(calc(-100% - 2rem));
+}
+
+html[dir="rtl"] .nav-drawer.active {
+  transform: translateX(0);
+}
+
+/* Form checkboxes */
+html[dir="rtl"] .checkbox-group input {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+/* LTR forced fields for numbers (loan calculator, repayment schedules) */
+html[dir="rtl"] .force-ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+html[dir="rtl"] span.force-ltr,
+html[dir="rtl"] strong.force-ltr {
+  display: inline-block;
+}

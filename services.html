@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | FastFund</title>
+  <meta name="description" content="Explore our financial products: Equipment Financing, Working Capital, and Lines of Credit.">
+  <meta name="theme-color" content="#0E1A2B">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Apply saved theme / direction before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('fastfund-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        if (localStorage.getItem('fastfund-rtl') === 'true') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,250..600;1,9..144,250..600&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay"></div>
+
+  <!-- Header & Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index.html" class="logo" aria-label="FastFund home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+          <span class="logo-text">Fast<em>Fund</em></span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="home2.html" class="nav-link">Home 2</a></li>
+            <li><a href="services.html" class="nav-link active" aria-current="page">Services</a></li>
+            <li><a href="loan-calculator.html" class="nav-link">Loan Calculator</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+          <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+          <a href="login.html" class="btn btn-primary btn-sm nav-cta">Login</a>
+          <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <aside class="nav-drawer" aria-label="Mobile menu">
+    <div class="drawer-header">
+      <a href="index.html" class="logo" aria-label="FastFund home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+          <span class="logo-text">Fast<em>Fund</em></span>
+        </a>
+      <button class="icon-btn drawer-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+
+    <ul class="drawer-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="home2.html" class="nav-link">Home 2</a></li>
+      <li><a href="services.html" class="nav-link active" aria-current="page">Services</a></li>
+      <li><a href="loan-calculator.html" class="nav-link">Loan Calculator</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+    </ul>
+
+    <div class="drawer-actions">
+      <a href="login.html" class="btn btn-primary btn-block">Login</a>
+      <div class="drawer-toggles">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <section class="page-hero hero bg-soft">
+      <div class="container">
+        <span class="eyebrow anim-in">Our products</span>
+        <h1 class="anim-in" style="--d: .1s">Financial products built to <span class="hl">scale</span></h1>
+        <p class="lead anim-in" style="--d: .2s">Compare our core offerings and find the capital solution that perfectly matches your strategic goals.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-3">
+          <article class="card card-hover reveal" style="--d: 0s">
+            <div class="card-image-wrap">
+              <img src="assets/images/equipment-financing.jpg" alt="Equipment Financing" class="card-img" loading="lazy">
+            </div>
+            <h3 class="card-title">Equipment Financing</h3>
+            <div class="card-body">
+              <p>Preserve your working capital while securing the physical assets needed for expansion.</p>
+              <ul class="spec-list">
+                <li><span>Amount</span><span class="force-ltr">$10k &ndash; $5M</span></li>
+                <li><span>Terms</span><span>12 &ndash; 72 months</span></li>
+                <li><span>Best for</span><span>Vehicles, heavy machinery, IT infrastructure</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="loan-calculator.html" class="btn btn-outline btn-block">Estimate payments</a>
+            </div>
+          </article>
+          <article class="card card-hover card-featured reveal" style="--d: 0.1s">
+            <span class="card-tag">Most popular</span>
+            <div class="card-image-wrap">
+              <img src="assets/images/working-capital.jpg" alt="Working Capital" class="card-img" loading="lazy">
+            </div>
+            <h3 class="card-title">Working Capital</h3>
+            <div class="card-body">
+              <p>Unsecured term loans designed to bridge cash flow gaps and seize immediate opportunities.</p>
+              <ul class="spec-list">
+                <li><span>Amount</span><span class="force-ltr">$25k &ndash; $1M</span></li>
+                <li><span>Terms</span><span>6 &ndash; 36 months</span></li>
+                <li><span>Best for</span><span>Payroll, bulk inventory, marketing blitz</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="loan-calculator.html" class="btn btn-primary btn-block">Estimate payments</a>
+            </div>
+          </article>
+          <article class="card card-hover reveal" style="--d: 0.2s">
+            <div class="card-image-wrap">
+              <img src="assets/images/lines-of-credit.jpg" alt="Lines of Credit" class="card-img" loading="lazy">
+            </div>
+            <h3 class="card-title">Lines of Credit</h3>
+            <div class="card-body">
+              <p>Flexible revolving access to funds. Draw down exactly what you need, when you need it.</p>
+              <ul class="spec-list">
+                <li><span>Amount</span><span class="force-ltr">Up to $500k</span></li>
+                <li><span>Terms</span><span>Revolving</span></li>
+                <li><span>Best for</span><span>Seasonal swings, ongoing flexibility</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="loan-calculator.html" class="btn btn-outline btn-block">Estimate payments</a>
+            </div>
+          </article>
+          <article class="card card-hover reveal" style="--d: 0.3s">
+            <div class="card-image-wrap">
+              <img src="assets/images/commercial-property.jpg" alt="Commercial Real Estate" class="card-img" loading="lazy">
+            </div>
+            <h3 class="card-title">Commercial Real Estate</h3>
+            <div class="card-body">
+              <p>Long-term capital solutions to acquire, expand, or refinance owner-occupied commercial properties and facilities.</p>
+              <ul class="spec-list">
+                <li><span>Amount</span><span class="force-ltr">$250k &ndash; $15M</span></li>
+                <li><span>Terms</span><span>5 &ndash; 25 years</span></li>
+                <li><span>Best for</span><span>Facility acquisition, building purchase, expansion</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="loan-calculator.html" class="btn btn-outline btn-block">Estimate payments</a>
+            </div>
+          </article>
+          <article class="card card-hover reveal" style="--d: 0.4s">
+            <div class="card-image-wrap">
+              <img src="assets/images/invoice-factoring.jpg" alt="Invoice Factoring" class="card-img" loading="lazy">
+            </div>
+            <h3 class="card-title">Invoice Factoring</h3>
+            <div class="card-body">
+              <p>Convert unpaid customer invoices and accounts receivable into immediate cash flow without debt liabilities.</p>
+              <ul class="spec-list">
+                <li><span>Amount</span><span class="force-ltr">$50k &ndash; $3M</span></li>
+                <li><span>Terms</span><span>30 &ndash; 90 days</span></li>
+                <li><span>Best for</span><span>B2B billing, unpaid invoices, cash flow speed</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="loan-calculator.html" class="btn btn-outline btn-block">Estimate payments</a>
+            </div>
+          </article>
+          <article class="card card-hover reveal" style="--d: 0.5s">
+            <div class="card-image-wrap">
+              <img src="assets/images/fleet-leasing.jpg" alt="Commercial Fleet Leasing" class="card-img" loading="lazy">
+            </div>
+            <h3 class="card-title">Commercial Fleet Leasing</h3>
+            <div class="card-body">
+              <p>Customized lease and finance programs for transport fleets, delivery vans, utility trucks, and heavy haulers.</p>
+              <ul class="spec-list">
+                <li><span>Amount</span><span class="force-ltr">$15k &ndash; $2M</span></li>
+                <li><span>Terms</span><span>24 &ndash; 60 months</span></li>
+                <li><span>Best for</span><span>Logistics fleets, transport vehicles, utility trucks</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="loan-calculator.html" class="btn btn-outline btn-block">Estimate payments</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Compare</span>
+          <h2>Side by side, <span class="hl">at a glance</span></h2>
+          <p class="lead">The key differences between our products, so you can pick the right fit in seconds.</p>
+        </div>
+        <div class="compare-wrap reveal">
+          <div class="table-responsive">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th scope="col"><span class="sr-only">Feature</span></th>
+                  <th scope="col">Equipment Financing</th>
+                  <th scope="col" class="is-featured"><span class="compare-tag">Most popular</span>Working Capital</th>
+                  <th scope="col">Lines of Credit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Funding amount</th>
+                  <td class="force-ltr">$10k &ndash; $5M</td>
+                  <td class="is-featured force-ltr">$25k &ndash; $1M</td>
+                  <td class="force-ltr">Up to $500k</td>
+                </tr>
+                <tr>
+                  <th scope="row">Term length</th>
+                  <td>12 &ndash; 72 months</td>
+                  <td class="is-featured">6 &ndash; 36 months</td>
+                  <td>Revolving</td>
+                </tr>
+                <tr>
+                  <th scope="row">Time to funding</th>
+                  <td>2 &ndash; 5 days</td>
+                  <td class="is-featured">As fast as 24 hours</td>
+                  <td>1 &ndash; 3 days</td>
+                </tr>
+                <tr>
+                  <th scope="row">Collateral required</th>
+                  <td>The equipment itself</td>
+                  <td class="is-featured"><i class="ph ph-x-circle"></i> None</td>
+                  <td><i class="ph ph-x-circle"></i> None</td>
+                </tr>
+                <tr>
+                  <th scope="row">Early payoff savings</th>
+                  <td><i class="ph-fill ph-check-circle"></i></td>
+                  <td class="is-featured"><i class="ph-fill ph-check-circle"></i></td>
+                  <td><i class="ph-fill ph-check-circle"></i></td>
+                </tr>
+                <tr>
+                  <th scope="row">Reusable funds</th>
+                  <td><i class="ph ph-minus"></i></td>
+                  <td class="is-featured"><i class="ph ph-minus"></i></td>
+                  <td><i class="ph-fill ph-check-circle"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Process</span>
+          <h2>Simple, transparent, <span class="hl">fast</span></h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <h4>Apply in minutes</h4>
+            <p>Share a few details about your business and connect your bank statements securely.</p>
+          </div>
+          <div class="step reveal" style="--d: .1s">
+            <h4>Compare offers</h4>
+            <p>We shop your profile across our lender network and present the strongest terms side by side.</p>
+          </div>
+          <div class="step reveal" style="--d: .2s">
+            <h4>Get funded</h4>
+            <p>Accept the offer that fits and receive capital directly in your account, often within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel theme-ink reveal">
+          <span class="eyebrow">Get started</span>
+          <h2>Ready to scale your <span class="hl">operations?</span></h2>
+          <p class="lead">See what you qualify for without impacting your credit score.</p>
+          <div class="cta-actions">
+            <a href="register.html" class="btn btn-accent btn-lg">Apply now <i class="ph ph-arrow-right"></i></a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Talk to sales</a>
+          </div>
+          <div class="trust-row">
+            <span><i class="ph ph-lock-key"></i> 256-bit encryption</span>
+            <span><i class="ph ph-shield-check"></i> Fully compliant</span>
+            <span><i class="ph ph-bank"></i> Bank-grade security</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="FastFund home">
+            <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+            <span class="logo-text">Fast<em>Fund</em></span>
+          </a>
+          <p class="footer-desc">Empowering growing businesses with fast, flexible, and transparent capital solutions tailored for your momentum.</p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="#" aria-label="X"><i class="ph ph-x-logo"></i></a>
+            <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Equipment Financing</a></li>
+            <li><a href="services.html">Working Capital</a></li>
+            <li><a href="services.html">Lines of Credit</a></li>
+            <li><a href="services.html">Commercial Loans</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#story">About Our Story</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Client Portal</a></li>
+            <li><a href="loan-calculator.html">Loan Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter-col">
+          <h4 class="footer-col-title">Stay Informed</h4>
+          <p class="newsletter-desc">Subscribe to receive market trends, rate updates, and capital strategy guides.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to FastFund!');">
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="Enter your business email" required aria-label="Email Address">
+              <button type="submit" aria-label="Subscribe"><i class="ph ph-arrow-right"></i></button>
+            </div>
+          </form>
+          <div class="footer-badge">
+            <i class="ph ph-shield-check"></i>
+            <span>256-Bit Bank Grade Encryption</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 FastFund Brokerage LLC. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#">Terms of Service</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

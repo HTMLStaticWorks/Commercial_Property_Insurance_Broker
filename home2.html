@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home 2 | FastFund</title>
+  <meta name="description" content="FastFund alternative home layout for A/B testing and variety.">
+  <meta name="theme-color" content="#0E1A2B">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Apply saved theme / direction before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('fastfund-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        if (localStorage.getItem('fastfund-rtl') === 'true') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,250..600;1,9..144,250..600&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay"></div>
+
+  <!-- Header & Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index.html" class="logo" aria-label="FastFund home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+          <span class="logo-text">Fast<em>Fund</em></span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="home2.html" class="nav-link active" aria-current="page">Home 2</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="loan-calculator.html" class="nav-link">Loan Calculator</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+          <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+          <a href="login.html" class="btn btn-primary btn-sm nav-cta">Login</a>
+          <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <aside class="nav-drawer" aria-label="Mobile menu">
+    <div class="drawer-header">
+      <a href="index.html" class="logo" aria-label="FastFund home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+          <span class="logo-text">Fast<em>Fund</em></span>
+        </a>
+      <button class="icon-btn drawer-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+
+    <ul class="drawer-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="home2.html" class="nav-link active" aria-current="page">Home 2</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="loan-calculator.html" class="nav-link">Loan Calculator</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+    </ul>
+
+    <div class="drawer-actions">
+      <a href="login.html" class="btn btn-primary btn-block">Login</a>
+      <div class="drawer-toggles">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Centered Hero -->
+    <section class="hero hero-centered hero-photo theme-ink">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop" alt="">
+      </div>
+      <div class="container">
+        <span class="eyebrow eyebrow-pill anim-in">Rated #1 Business Broker 2026</span>
+        <h1 class="anim-in" style="--d: .1s">Smarter capital for <span class="hl">serious</span> businesses</h1>
+        <p class="lead anim-in" style="--d: .2s">Get the funds you need to expand, restock, or restructure in days. Leverage our network of premium lenders to secure the best rates available.</p>
+        <div class="hero-actions anim-in" style="--d: .3s">
+          <a href="register.html" class="btn btn-primary btn-lg">Start application <i class="ph ph-arrow-right"></i></a>
+          <a href="loan-calculator.html" class="btn btn-outline btn-lg">Estimate payments</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo Cloud (Trust) -->
+    <section class="logo-strip" aria-label="Trusted by">
+      <p class="logo-strip-label">Trusted by thousands of businesses across the nation</p>
+      <div class="marquee-wrap">
+        <div class="marquee">
+          <span><i class="ph-fill ph-diamond"></i> AcmeCorp</span>
+          <span><i class="ph-fill ph-diamond"></i> StarkInd</span>
+          <span><i class="ph-fill ph-diamond"></i> Globex</span>
+          <span><i class="ph-fill ph-diamond"></i> Initech</span>
+          <span><i class="ph-fill ph-diamond"></i> Umbrella</span>
+          <span><i class="ph-fill ph-diamond"></i> Vandelay</span>
+          <span><i class="ph-fill ph-diamond"></i> Hooli</span>
+          <span><i class="ph-fill ph-diamond"></i> Wayne & Co.</span>
+          <span aria-hidden="true"><i class="ph-fill ph-diamond"></i> AcmeCorp</span>
+          <span aria-hidden="true"><i class="ph-fill ph-diamond"></i> StarkInd</span>
+          <span aria-hidden="true"><i class="ph-fill ph-diamond"></i> Globex</span>
+          <span aria-hidden="true"><i class="ph-fill ph-diamond"></i> Initech</span>
+          <span aria-hidden="true"><i class="ph-fill ph-diamond"></i> Umbrella</span>
+          <span aria-hidden="true"><i class="ph-fill ph-diamond"></i> Vandelay</span>
+          <span aria-hidden="true"><i class="ph-fill ph-diamond"></i> Hooli</span>
+          <span aria-hidden="true"><i class="ph-fill ph-diamond"></i> Wayne & Co.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Split Content -->
+    <section class="section">
+      <div class="container split split-story">
+        <div class="reveal">
+          <span class="eyebrow">The broker difference</span>
+          <h2>We broker better deals. <span class="hl">Period.</span></h2>
+          <p class="lead">As a leading brokerage, we don't just lend our own money. We match your specific business profile with dozens of specialized lenders to ensure you get the most favorable terms possible.</p>
+          <ul class="check-list">
+            <li><i class="ph-bold ph-check"></i> Access to 50+ vetted lending partners</li>
+            <li><i class="ph-bold ph-check"></i> Zero upfront fees or obligations</li>
+            <li><i class="ph-bold ph-check"></i> Soft credit pull to check rates</li>
+          </ul>
+          <a href="services.html" class="btn btn-primary">Explore products <i class="ph ph-arrow-right"></i></a>
+        </div>
+        <div class="media media-wide reveal" style="--d: .1s">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1400&auto=format&fit=crop" alt="Business analysis" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Specialties Section (Unique to Home 2) -->
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="section-header-split reveal">
+          <div>
+            <span class="eyebrow">Industry Specialties</span>
+            <h2>Capital tailored to your <span class="hl">specific sector</span></h2>
+          </div>
+          <p>We provide specialized funding solutions designed around the revenue cycles, equipment needs, and growth milestones of key industries.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card card-hover reveal">
+            <div class="card-image-wrap">
+              <img src="assets/images/industry-construction.jpg" alt="Heavy Machinery & Construction" class="card-img" loading="lazy">
+            </div>
+            <h3 class="card-title">Construction & Fleet</h3>
+            <div class="card-body">
+              <p>Acquire excavators, cranes, commercial vehicles, and site equipment with flexible terms tailored to project billing cycles.</p>
+            </div>
+            <div class="card-footer">
+              <a href="services.html" class="card-link">Explore Sector Funding <i class="ph ph-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="card card-hover reveal" style="--d: .1s">
+            <div class="card-image-wrap">
+              <img src="assets/images/industry-corporate.jpg" alt="Corporate Expansion & Buyouts" class="card-img" loading="lazy">
+            </div>
+            <h3 class="card-title">Corporate & Expansion</h3>
+            <div class="card-body">
+              <p>Capital for M&A acquisitions, office footprint expansion, partner buyouts, and enterprise growth through lender syndication.</p>
+            </div>
+            <div class="card-footer">
+              <a href="services.html" class="card-link">Explore Growth Capital <i class="ph ph-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="card card-hover reveal" style="--d: .2s">
+            <div class="card-image-wrap">
+              <img src="assets/images/industry-logistics.jpg" alt="Logistics & Transport Fleets" class="card-img" loading="lazy">
+            </div>
+            <h3 class="card-title">Logistics & Supply Chain</h3>
+            <div class="card-body">
+              <p>Rapid financing for semi-trucks, trailer fleets, automated warehouse systems, and inventory working capital to keep goods moving.</p>
+            </div>
+            <div class="card-footer">
+              <a href="services.html" class="card-link">Explore Logistics Capital <i class="ph ph-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Testimonials -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Testimonials</span>
+          <h2>Businesses that <span class="hl">shopped smarter</span></h2>
+          <p class="lead">Real results from owners who let our lenders compete for their deal.</p>
+        </div>
+        <div class="grid-3">
+          <figure class="quote-card reveal" style="--d: 0s">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <blockquote>&ldquo;Three lenders competed for our deal and we closed at a rate our bank could not touch. The brokerage model genuinely works.&rdquo;</blockquote>
+            <figcaption class="quote-author">
+              <img class="avatar avatar-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=160&h=160&auto=format&fit=crop&crop=faces" alt="Portrait of Daniel Brooks" width="52" height="52" loading="lazy">
+              <div>
+                <strong>Daniel Brooks</strong>
+                <span>COO, Northline Freight</span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="quote-card reveal" style="--d: 0.1s">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <blockquote>&ldquo;Our line of credit carried us through a slow season without touching payroll. The whole process took less than a week.&rdquo;</blockquote>
+            <figcaption class="quote-author">
+              <img class="avatar avatar-photo" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=160&h=160&auto=format&fit=crop&crop=faces" alt="Portrait of Olivia Hart" width="52" height="52" loading="lazy">
+              <div>
+                <strong>Olivia Hart</strong>
+                <span>Owner, Harbor & Vine</span>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="quote-card reveal" style="--d: 0.2s">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <blockquote>&ldquo;No upfront fees, no pressure, and a real advisor who picked up the phone. Exactly what a growing business needs.&rdquo;</blockquote>
+            <figcaption class="quote-author">
+              <img class="avatar avatar-photo" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=160&h=160&auto=format&fit=crop&crop=faces" alt="Portrait of James Carter" width="52" height="52" loading="lazy">
+              <div>
+                <strong>James Carter</strong>
+                <span>Managing Partner, Carter Build Co.</span>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section theme-ink">
+      <div class="container">
+        <div class="stats-band">
+          <div class="reveal">
+            <div class="stat-value force-ltr">$500M<em>+</em></div>
+            <div class="stat-label">Capital funded</div>
+          </div>
+          <div class="reveal" style="--d: .1s">
+            <div class="stat-value force-ltr">12k<em>+</em></div>
+            <div class="stat-label">Businesses served</div>
+          </div>
+          <div class="reveal" style="--d: .2s">
+            <div class="stat-value force-ltr">94<em>%</em></div>
+            <div class="stat-label">Approval rate</div>
+          </div>
+          <div class="reveal" style="--d: .3s">
+            <div class="stat-value force-ltr">50<em>+</em></div>
+            <div class="stat-label">Lending partners</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel theme-ink reveal">
+          <span class="eyebrow">Get started</span>
+          <h2>Ready to scale your <span class="hl">operations?</span></h2>
+          <p class="lead">See what you qualify for without impacting your credit score.</p>
+          <div class="cta-actions">
+            <a href="register.html" class="btn btn-accent btn-lg">Apply now <i class="ph ph-arrow-right"></i></a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Talk to sales</a>
+          </div>
+          <div class="trust-row">
+            <span><i class="ph ph-lock-key"></i> 256-bit encryption</span>
+            <span><i class="ph ph-shield-check"></i> Fully compliant</span>
+            <span><i class="ph ph-bank"></i> Bank-grade security</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="FastFund home">
+            <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+            <span class="logo-text">Fast<em>Fund</em></span>
+          </a>
+          <p class="footer-desc">Empowering growing businesses with fast, flexible, and transparent capital solutions tailored for your momentum.</p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="#" aria-label="X"><i class="ph ph-x-logo"></i></a>
+            <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Equipment Financing</a></li>
+            <li><a href="services.html">Working Capital</a></li>
+            <li><a href="services.html">Lines of Credit</a></li>
+            <li><a href="services.html">Commercial Loans</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#story">About Our Story</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Client Portal</a></li>
+            <li><a href="loan-calculator.html">Loan Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter-col">
+          <h4 class="footer-col-title">Stay Informed</h4>
+          <p class="newsletter-desc">Subscribe to receive market trends, rate updates, and capital strategy guides.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to FastFund!');">
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="Enter your business email" required aria-label="Email Address">
+              <button type="submit" aria-label="Subscribe"><i class="ph ph-arrow-right"></i></button>
+            </div>
+          </form>
+          <div class="footer-badge">
+            <i class="ph ph-shield-check"></i>
+            <span>256-Bit Bank Grade Encryption</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 FastFund Brokerage LLC. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#">Terms of Service</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

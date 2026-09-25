@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | FastFund Business Portal</title>
+  <meta name="description" content="Create a FastFund account to apply for business financing.">
+  <meta name="theme-color" content="#0E1A2B">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Apply saved theme / direction before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('fastfund-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        if (localStorage.getItem('fastfund-rtl') === 'true') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,250..600;1,9..144,250..600&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body class="auth-page">
+  <div class="auth-toggles">
+    <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+    <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+  </div>
+
+  <main class="auth-card anim-in">
+    <a href="index.html" class="logo" aria-label="FastFund home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+          <span class="logo-text">Fast<em>Fund</em></span>
+        </a>
+    <h1>Get Funded Faster</h1>
+    <p class="auth-subtitle">Create an account to compare offers from 50+ lenders in one place.</p>
+
+    <form class="needs-validation" action="dashboard.html" method="GET" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="name">Full Name</label>
+        <input type="text" class="form-control" id="name" autocomplete="name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email Address</label>
+        <input type="email" class="form-control force-ltr" id="email" autocomplete="email" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="businessName">Business Name</label>
+        <input type="text" class="form-control" id="businessName" autocomplete="organization" required>
+      </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <div class="input-wrap">
+            <input type="password" class="form-control force-ltr" id="password" minlength="8" autocomplete="new-password" required>
+            <button type="button" class="pw-toggle" aria-label="Show password"><i class="ph ph-eye"></i></button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="confirmPassword">Confirm Password</label>
+          <div class="input-wrap">
+            <input type="password" class="form-control force-ltr" id="confirmPassword" minlength="8" autocomplete="new-password" required>
+            <button type="button" class="pw-toggle" aria-label="Show password"><i class="ph ph-eye"></i></button>
+          </div>
+        </div>
+
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="terms" required>
+        <label for="terms">I agree to the <a class="auth-link" href="#">Terms &amp; Conditions</a> and the <a class="auth-link" href="#">Privacy Policy</a>.</label>
+      </div>
+
+      <button type="submit" class="btn btn-auth">Create Account</button>
+    </form>
+
+    <div class="auth-divider">or</div>
+
+      <div class="social-login">
+        <button type="button" class="btn btn-social">
+          <i class="ph-bold ph-google-logo"></i>
+          Continue with Google
+        </button>
+        <button type="button" class="btn btn-social">
+          <i class="ph-fill ph-apple-logo"></i>
+          Continue with Apple
+        </button>
+      </div>
+
+    <p class="auth-switch">Already have an account? <a class="auth-link" href="login.html">Login here</a></p>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

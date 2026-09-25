@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Calculator | FastFund</title>
+  <meta name="description" content="Estimate your monthly payments, total interest, and total repayment costs.">
+  <meta name="theme-color" content="#0E1A2B">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Apply saved theme / direction before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('fastfund-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        if (localStorage.getItem('fastfund-rtl') === 'true') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,250..600;1,9..144,250..600&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay"></div>
+
+  <!-- Header & Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index.html" class="logo" aria-label="FastFund home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+          <span class="logo-text">Fast<em>Fund</em></span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="home2.html" class="nav-link">Home 2</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="loan-calculator.html" class="nav-link active" aria-current="page">Loan Calculator</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+          <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+          <a href="login.html" class="btn btn-primary btn-sm nav-cta">Login</a>
+          <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <aside class="nav-drawer" aria-label="Mobile menu">
+    <div class="drawer-header">
+      <a href="index.html" class="logo" aria-label="FastFund home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+          <span class="logo-text">Fast<em>Fund</em></span>
+        </a>
+      <button class="icon-btn drawer-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+
+    <ul class="drawer-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="home2.html" class="nav-link">Home 2</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="loan-calculator.html" class="nav-link active" aria-current="page">Loan Calculator</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+    </ul>
+
+    <div class="drawer-actions">
+      <a href="login.html" class="btn btn-primary btn-block">Login</a>
+      <div class="drawer-toggles">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <section class="page-hero hero bg-soft">
+      <div class="container">
+        <span class="eyebrow anim-in">Plan with confidence</span>
+        <h1 class="anim-in" style="--d: .1s">Loan <span class="hl">calculator</span></h1>
+        <p class="lead anim-in" style="--d: .2s">Estimate your monthly payments and total costs before you apply.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-block-start: 0;">
+      <div class="container" style="max-width: 1080px;">
+        <div class="calculator-box anim-in" style="--d: .3s">
+
+          <!-- Inputs -->
+          <div class="calc-inputs" id="calculatorForm">
+            <div class="form-group">
+              <label class="form-label" for="calcAmount">Financing amount</label>
+              <div class="input-affix force-ltr">
+                <span class="affix">$</span>
+                <input type="number" class="form-control" id="calcAmount" value="50000" min="1000" step="1000">
+              </div>
+              <input type="range" class="range force-ltr" id="calcAmountRange" min="10000" max="1000000" step="5000" value="50000" aria-label="Financing amount slider">
+              <div class="range-meta force-ltr"><span>$10k</span><span>$1M</span></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="calcTerm">Estimated term</label>
+              <select class="form-control force-ltr" id="calcTerm">
+                <option value="6">6 Months</option>
+                <option value="12">12 Months (1 Year)</option>
+                <option value="24" selected>24 Months (2 Years)</option>
+                <option value="36">36 Months (3 Years)</option>
+                <option value="48">48 Months (4 Years)</option>
+                <option value="60">60 Months (5 Years)</option>
+                <option value="72">72 Months (6 Years)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="calcRate">Estimated annual rate</label>
+              <div class="input-affix suffix force-ltr">
+                <input type="number" class="form-control" id="calcRate" value="8.5" min="1" step="0.1">
+                <span class="affix">%</span>
+              </div>
+              <input type="range" class="range force-ltr" id="calcRateRange" min="1" max="30" step="0.1" value="8.5" aria-label="Annual rate slider">
+              <div class="range-meta force-ltr"><span>1%</span><span>30%</span></div>
+            </div>
+          </div>
+
+          <!-- Outputs -->
+          <div class="calc-results theme-ink force-ltr" aria-live="polite">
+            <div>
+              <div class="result-label">Estimated monthly payment</div>
+              <div class="result-value highlight" id="resultMonthly">$0</div>
+            </div>
+
+            <div>
+              <div class="split-bar"><span class="principal" id="barPrincipal" style="width: 90%;"></span><span class="interest"></span></div>
+              <div class="split-legend"><span>Principal</span><span class="i">Interest</span></div>
+            </div>
+
+            <div class="result-row">
+              <div>
+                <div class="result-label">Total repayment</div>
+                <div class="result-value" id="resultTotal">$0</div>
+              </div>
+              <div>
+                <div class="result-label">Total interest</div>
+                <div class="result-value" id="resultInterest">$0</div>
+              </div>
+            </div>
+
+            <a href="register.html" class="btn btn-accent btn-lg btn-block">Apply now <i class="ph ph-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer-box reveal">
+          <i class="ph ph-info"></i>
+          <div><strong>Disclaimer:</strong> The results provided by this calculator are estimates only and are intended for illustrative purposes. Final rates, terms, and approval are subject to a full application, underwriting, and credit review by FastFund or its lending partners.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rate factors -->
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Understanding your rate</span>
+          <h2>What shapes your <span class="hl">final rate</span></h2>
+          <p class="lead">Lenders weigh a few core factors. Strengthen any of them and your offers improve.</p>
+        </div>
+        <div class="feature-grid reveal">
+          <div class="feature">
+            <i class="ph ph-clock-counter-clockwise"></i>
+            <h4>Time in Business</h4>
+            <p>Two or more years of operating history unlocks the most competitive terms.</p>
+          </div>
+          <div class="feature">
+            <i class="ph ph-chart-bar"></i>
+            <h4>Annual Revenue</h4>
+            <p>Steady, verifiable revenue shows lenders your capacity to repay.</p>
+          </div>
+          <div class="feature">
+            <i class="ph ph-gauge"></i>
+            <h4>Credit Profile</h4>
+            <p>Personal and business credit history both factor into pricing.</p>
+          </div>
+          <div class="feature">
+            <i class="ph ph-shield-check"></i>
+            <h4>Collateral</h4>
+            <p>Secured financing, like equipment loans, typically carries lower rates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Repayment Strategies & Insights Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Smart Planning</span>
+          <h2>Loan Repayment <span class="hl">Strategies & Insights</span></h2>
+          <p class="lead">Essential guidance on structuring your loan terms to minimize total borrowing costs.</p>
+        </div>
+
+        <div class="grid-3 reveal">
+          <article class="card card-hover">
+            <div class="card-icon" style="margin-block-end: var(--sp-4);"><i class="ph ph-lightning"></i></div>
+            <h3 class="card-title">Early Payoff Benefits</h3>
+            <div class="card-body">
+              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                Most of our preferred lending partners offer zero prepayment penalties. Paying down your principal early directly reduces overall interest expense.
+              </p>
+            </div>
+            <div class="card-footer" style="padding-block-start: var(--sp-4); display: flex; justify-content: center;">
+              <span class="badge badge-success"><i class="ph ph-check-circle"></i> Zero Prepayment Fees</span>
+            </div>
+          </article>
+
+          <article class="card card-hover" style="--d: 0.1s;">
+            <div class="card-icon" style="margin-block-end: var(--sp-4);"><i class="ph ph-sliders-horizontal"></i></div>
+            <h3 class="card-title">Short vs. Long Terms</h3>
+            <div class="card-body">
+              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                Shorter terms (6&ndash;24 mos) minimize overall interest paid, while longer terms (36&ndash;72 mos) deliver lower monthly payment obligations to protect liquidity.
+              </p>
+            </div>
+            <div class="card-footer" style="padding-block-start: var(--sp-4); display: flex; justify-content: center;">
+              <span class="badge badge-success"><i class="ph ph-sliders"></i> Flexible Term Matching</span>
+            </div>
+          </article>
+
+          <article class="card card-hover" style="--d: 0.2s;">
+            <div class="card-icon" style="margin-block-end: var(--sp-4);"><i class="ph ph-shield-check"></i></div>
+            <h3 class="card-title">Soft Rate Pre-Check</h3>
+            <div class="card-body">
+              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                Our initial underwriting estimate uses a soft credit check that won't impact your credit score, ensuring risk-free rate comparisons across 50+ lenders.
+              </p>
+            </div>
+            <div class="card-footer" style="padding-block-start: var(--sp-4); display: flex; justify-content: center;">
+              <span class="badge badge-success"><i class="ph ph-lock"></i> Credit Score Protected</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel theme-ink reveal">
+          <span class="eyebrow">Get started</span>
+          <h2>Ready to scale your <span class="hl">operations?</span></h2>
+          <p class="lead">See what you qualify for without impacting your credit score.</p>
+          <div class="cta-actions">
+            <a href="register.html" class="btn btn-accent btn-lg">Apply now <i class="ph ph-arrow-right"></i></a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Talk to sales</a>
+          </div>
+          <div class="trust-row">
+            <span><i class="ph ph-lock-key"></i> 256-bit encryption</span>
+            <span><i class="ph ph-shield-check"></i> Fully compliant</span>
+            <span><i class="ph ph-bank"></i> Bank-grade security</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="FastFund home">
+            <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+            <span class="logo-text">Fast<em>Fund</em></span>
+          </a>
+          <p class="footer-desc">Empowering growing businesses with fast, flexible, and transparent capital solutions tailored for your momentum.</p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="#" aria-label="X"><i class="ph ph-x-logo"></i></a>
+            <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Equipment Financing</a></li>
+            <li><a href="services.html">Working Capital</a></li>
+            <li><a href="services.html">Lines of Credit</a></li>
+            <li><a href="services.html">Commercial Loans</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#story">About Our Story</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Client Portal</a></li>
+            <li><a href="loan-calculator.html">Loan Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter-col">
+          <h4 class="footer-col-title">Stay Informed</h4>
+          <p class="newsletter-desc">Subscribe to receive market trends, rate updates, and capital strategy guides.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to FastFund!');">
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="Enter your business email" required aria-label="Email Address">
+              <button type="submit" aria-label="Subscribe"><i class="ph ph-arrow-right"></i></button>
+            </div>
+          </form>
+          <div class="footer-badge">
+            <i class="ph ph-shield-check"></i>
+            <span>256-Bit Bank Grade Encryption</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 FastFund Brokerage LLC. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#">Terms of Service</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/calculator.js"></script>
+</body>
+</html>

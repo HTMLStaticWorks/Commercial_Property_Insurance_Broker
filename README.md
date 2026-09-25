@@ -1,2 +1,0 @@
-# Commercial_Property_Insurance_Broker
-Automated website repository for Commercial_Property_Insurance_Broker
