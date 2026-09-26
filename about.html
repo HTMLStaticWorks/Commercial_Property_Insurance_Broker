@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - FastFund Commercial Capital Advisory</title>
+  <meta name="description" content="Learn about FastFund's heritage, institutional debt advisory philosophy, quantitative underwriting leadership team, and commercial property financing milestones.">
+  <meta name="theme-color" content="#0E1A2B">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Apply saved theme / direction before first paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('fastfund-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        if (localStorage.getItem('fastfund-rtl') === 'true') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,250..600;1,9..144,250..600&family=Manrope:wght@400..800&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay"></div>
+
+  <!-- Header & Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index.html" class="logo" aria-label="FastFund home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+          <span class="logo-text">Fast<em>Fund</em></span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="home2.html" class="nav-link">Home 2</a></li>
+            <li><a href="about.html" class="nav-link active" aria-current="page">About</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="loan-calculator.html" class="nav-link">Loan Calculator</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+          <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+          <a href="login.html" class="btn btn-primary btn-sm nav-cta">Login</a>
+          <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <aside class="nav-drawer" aria-label="Mobile menu">
+    <div class="drawer-header">
+      <a href="index.html" class="logo" aria-label="FastFund home">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+        <span class="logo-text">Fast<em>Fund</em></span>
+      </a>
+      <button class="icon-btn drawer-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+
+    <ul class="drawer-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="home2.html" class="nav-link">Home 2</a></li>
+      <li><a href="about.html" class="nav-link active" aria-current="page">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="loan-calculator.html" class="nav-link">Loan Calculator</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+    </ul>
+
+    <div class="drawer-actions">
+      <a href="login.html" class="btn btn-primary btn-block">Login</a>
+      <div class="drawer-toggles">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content: Exactly 4 Sections -->
+  <main id="main-content">
+
+    <!-- SECTION 1: HERO & STRATEGIC PURPOSE -->
+    <section class="hero theme-ink" id="about-hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow eyebrow-pill anim-in">Pioneering Capital Architecture</span>
+          <h1 class="anim-in" style="--d: .1s">Bridging institutional markets with <span class="hl">agile liquidity.</span></h1>
+          <p class="lead anim-in" style="--d: .2s">FastFund was founded to dismantle traditional underwriting friction. We empower commercial property investors, asset managers, and expanding enterprises with quantitative debt advisory and rapid capital placement.</p>
+          <div class="hero-actions anim-in" style="--d: .3s">
+            <a href="loan-calculator.html" class="btn btn-accent btn-lg">Explore capital models <i class="ph ph-arrow-right"></i></a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Meet our principals</a>
+          </div>
+          <div class="hero-trust anim-in" style="--d: .45s">
+            <div>
+              <div class="stat-value force-ltr">$1.8B<em>+</em></div>
+              <div class="stat-label">Volume Syndicated</div>
+            </div>
+            <div>
+              <div class="stat-value force-ltr">14<em>h</em></div>
+              <div class="stat-label">Underwriting Window</div>
+            </div>
+            <div>
+              <div class="stat-value force-ltr">48</div>
+              <div class="stat-label">States Covered</div>
+            </div>
+            <div>
+              <div class="stat-value force-ltr">98.4<em>%</em></div>
+              <div class="stat-label">Closing Execution</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual anim-in" style="--d: .25s">
+          <div class="media media-wide">
+            <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1200&auto=format&fit=crop" alt="Modern glass commercial tower skyline representing FastFund institutional debt advisory">
+          </div>
+          <div class="float-card float-card-a">
+            <div class="fc-label"><i class="ph-fill ph-buildings"></i> Asset Portfolio</div>
+            <div class="fc-value force-ltr">$1,850,000,000</div>
+            <div class="fc-bar"><span></span></div>
+          </div>
+          <div class="float-card float-card-b">
+            <div class="fc-label"><i class="ph-fill ph-certificate"></i> Debt Rating</div>
+            <div class="fc-value force-ltr">Institutional AA</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CORE PHILOSOPHY & CAPITAL PILLARS -->
+    <section class="section bg-soft" id="about-philosophy">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Institutional Integrity</span>
+          <h2>The Four Pillars of Our <span class="hl">Capital Architecture</span></h2>
+          <p class="lead">We unite mathematical precision, senior underwriting advisory, and direct capital markets access to build lasting commercial value.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card card-hover reveal" style="--d: 0s">
+            <div class="card-top">
+              <div class="card-icon"><i class="ph ph-brain"></i></div>
+              <span class="card-index">01</span>
+            </div>
+            <h3 class="card-title">Algorithmic Risk Models</h3>
+            <div class="card-body">
+              <p>Our proprietary evaluation engines analyze real-time commercial property cash flows and enterprise balance sheets, avoiding archaic debt-service delays.</p>
+            </div>
+          </article>
+
+          <article class="card card-hover reveal" style="--d: 0.1s">
+            <div class="card-top">
+              <div class="card-icon"><i class="ph ph-handshake"></i></div>
+              <span class="card-index">02</span>
+            </div>
+            <h3 class="card-title">Direct Syndication</h3>
+            <div class="card-body">
+              <p>Direct integration with top-tier REITs, insurance debt funds, and institutional lenders ensures competitive spreads and zero hidden origination fees.</p>
+            </div>
+          </article>
+
+          <article class="card card-hover reveal" style="--d: 0.2s">
+            <div class="card-top">
+              <div class="card-icon"><i class="ph ph-user-focus"></i></div>
+              <span class="card-index">03</span>
+            </div>
+            <h3 class="card-title">Senior Principal Advisory</h3>
+            <div class="card-body">
+              <p>Every transaction is led personally by a senior deal principal, tailoring custom covenant structures to align with long-term asset hold strategies.</p>
+            </div>
+          </article>
+
+          <article class="card card-hover reveal" style="--d: 0.3s">
+            <div class="card-top">
+              <div class="card-icon"><i class="ph ph-lightning"></i></div>
+              <span class="card-index">04</span>
+            </div>
+            <h3 class="card-title">Accelerated Execution</h3>
+            <div class="card-body">
+              <p>Automated title verification, digitized closing escrows, and streamlined loan docs enable rapid capital disbursement when timing is paramount.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: EXECUTIVE LEADERSHIP & ADVISORY BOARD -->
+    <section class="section" id="about-leadership">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Leadership & Vision</span>
+          <h2>Guided by Commercial <span class="hl">Capital Pioneers</span></h2>
+          <p class="lead">Our executive leadership team brings over 70 years of combined experience in commercial real estate syndication, structured debt, and quantitative finance.</p>
+        </div>
+
+        <div class="grid-4">
+          <!-- Leader 1 -->
+          <article class="card card-hover reveal" style="--d: 0s">
+            <div class="media" style="width: 100%; aspect-ratio: 1 / 1; border-radius: calc(var(--radius) - 4px); margin-block-end: var(--sp-4);">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" alt="Victoria Vance - CEO & Co-Founder" loading="lazy">
+            </div>
+            <h3 class="card-title" style="margin-block-end: var(--sp-1);">Victoria Vance</h3>
+            <span style="font-size: 0.75rem; font-weight: 750; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-block-end: var(--sp-3); display: block;">CEO & Co-Founder</span>
+            <div class="card-body">
+              <p style="font-size: 0.9rem;">Former Chief Credit Officer with 22+ years overseeing $3B+ in commercial property debt syndication across logistics and urban mixed-use assets.</p>
+            </div>
+            <div class="card-footer" style="padding-block-start: var(--sp-3);">
+              <a href="#" class="icon-btn" aria-label="Victoria Vance LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            </div>
+          </article>
+
+          <!-- Leader 2 -->
+          <article class="card card-hover reveal" style="--d: 0.1s">
+            <div class="media" style="width: 100%; aspect-ratio: 1 / 1; border-radius: calc(var(--radius) - 4px); margin-block-end: var(--sp-4);">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop" alt="Marcus Sterling - Head of Capital Markets" loading="lazy">
+            </div>
+            <h3 class="card-title" style="margin-block-end: var(--sp-1);">Marcus Sterling</h3>
+            <span style="font-size: 0.75rem; font-weight: 750; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-block-end: var(--sp-3); display: block;">Head of Capital Markets</span>
+            <div class="card-body">
+              <p style="font-size: 0.9rem;">Specialist in mezzanine financing, bridge debt facilities, and corporate sale-leaseback restructurings for middle-market enterprise clients.</p>
+            </div>
+            <div class="card-footer" style="padding-block-start: var(--sp-3);">
+              <a href="#" class="icon-btn" aria-label="Marcus Sterling LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            </div>
+          </article>
+
+          <!-- Leader 3 -->
+          <article class="card card-hover reveal" style="--d: 0.2s">
+            <div class="media" style="width: 100%; aspect-ratio: 1 / 1; border-radius: calc(var(--radius) - 4px); margin-block-end: var(--sp-4);">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop" alt="Dr. Elena Rostova - Chief Quantitative Officer" loading="lazy">
+            </div>
+            <h3 class="card-title" style="margin-block-end: var(--sp-1);">Dr. Elena Rostova</h3>
+            <span style="font-size: 0.75rem; font-weight: 750; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-block-end: var(--sp-3); display: block;">Chief Quantitative Officer</span>
+            <div class="card-body">
+              <p style="font-size: 0.9rem;">PhD in Applied Econometrics from MIT; leads FastFund's algorithmic underwriting framework and risk pricing architecture.</p>
+            </div>
+            <div class="card-footer" style="padding-block-start: var(--sp-3);">
+              <a href="#" class="icon-btn" aria-label="Dr. Elena Rostova LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            </div>
+          </article>
+
+          <!-- Leader 4 -->
+          <article class="card card-hover reveal" style="--d: 0.3s">
+            <div class="media" style="width: 100%; aspect-ratio: 1 / 1; border-radius: calc(var(--radius) - 4px); margin-block-end: var(--sp-4);">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop" alt="Julian Hayes - VP of Commercial Underwriting" loading="lazy">
+            </div>
+            <h3 class="card-title" style="margin-block-end: var(--sp-1);">Julian Hayes</h3>
+            <span style="font-size: 0.75rem; font-weight: 750; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-block-end: var(--sp-3); display: block;">VP of Commercial Underwriting</span>
+            <div class="card-body">
+              <p style="font-size: 0.9rem;">Expert in commercial equipment credit lines, industrial real estate acquisition debt, and working capital acceleration strategies.</p>
+            </div>
+            <div class="card-footer" style="padding-block-start: var(--sp-3);">
+              <a href="#" class="icon-btn" aria-label="Julian Hayes LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PORTFOLIO IMPACT & MILESTONES -->
+    <section class="section theme-ink" id="about-impact">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Proven Performance</span>
+          <h2>Transactions That Define Our <span class="hl">Market Authority</span></h2>
+          <p class="lead">A glance at recent commercial debt placements engineered with precision, rapid underwriting, and tailored loan terms.</p>
+        </div>
+
+        <div class="grid-3" style="margin-block-end: clamp(3rem, 6vw, 5rem);">
+          <!-- Case 1 -->
+          <article class="card card-hover reveal" style="--d: 0s">
+            <span class="card-tag">Logistics Hub</span>
+            <h3 class="card-title" style="margin-block-start: var(--sp-2);">$65M Acquisition</h3>
+            <div class="card-body">
+              <p>Structured a high-speed acquisition bridge facility for a 520,000 sq ft industrial fulfillment complex in Dallas, TX.</p>
+              <ul class="spec-list" style="width: 100%;">
+                <li><span>Underwrite Time</span><span class="force-ltr">11 Business Days</span></li>
+                <li><span>Loan-to-Value</span><span>78% LTV</span></li>
+                <li><span>Facility Structure</span><span>Bridge-to-HUD</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Case 2 -->
+          <article class="card card-hover card-featured reveal" style="--d: 0.1s">
+            <span class="card-tag">Life Sciences</span>
+            <h3 class="card-title" style="margin-block-start: var(--sp-2);">$42M Refinance</h3>
+            <div class="card-body">
+              <p>Recapitalized a 3-building commercial R&D park in Boston, lowering annual debt service while preserving growth capital.</p>
+              <ul class="spec-list" style="width: 100%;">
+                <li><span>Interest Savings</span><span class="force-ltr">-185 bps</span></li>
+                <li><span>Amortization</span><span>36 Mo Interest-Only</span></li>
+                <li><span>Execution</span><span>Zero Prepay Penalty</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Case 3 -->
+          <article class="card card-hover reveal" style="--d: 0.2s">
+            <span class="card-tag">Infrastructure</span>
+            <h3 class="card-title" style="margin-block-start: var(--sp-2);">$28M Credit Facility</h3>
+            <div class="card-body">
+              <p>Delivered a revolving asset-backed equipment credit line for a multi-state contractor, funding 140+ heavy units.</p>
+              <ul class="spec-list" style="width: 100%;">
+                <li><span>Fleet Units</span><span class="force-ltr">140+ Machinery</span></li>
+                <li><span>Term</span><span>60 Months Fixed</span></li>
+                <li><span>Turnaround</span><span>48 Hours</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <!-- Integrated CTA Banner inside Section 4 -->
+        <div class="card reveal" style="background: var(--surface-raised); border-color: var(--accent); padding: clamp(2rem, 5vw, 3.5rem); text-align: center;">
+          <h3 style="font-size: var(--size-h2); margin-block-end: var(--sp-3);">Ready to elevate your commercial financing strategy?</h3>
+          <p class="lead" style="max-width: 640px; margin-inline: auto; margin-block-end: var(--sp-8);">Partner with FastFund's senior underwriting principals to evaluate your transaction requirements or structure customized capital scenarios.</p>
+          <div style="display: flex; gap: var(--sp-4); justify-content: center; flex-wrap: wrap;">
+            <a href="loan-calculator.html" class="btn btn-accent btn-lg">Calculate loan options <i class="ph ph-arrow-right"></i></a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Speak with an advisor</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="FastFund home">
+            <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3.5L26.5 8.25V15.75C26.5 21.2 22 25.8 16 27.5C10 25.8 5.5 21.2 5.5 15.75V8.25L16 3.5Z" class="logo-shield" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 18L16 13L21 18" class="logo-arrow" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 13V22" class="logo-stem" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="9.5" r="1.4" class="logo-dot" fill="currentColor"/></svg></span>
+            <span class="logo-text">Fast<em>Fund</em></span>
+          </a>
+          <p class="footer-tagline">Institutional commercial real estate financing, equipment debt, and working capital advisory built for speed and clarity.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="#" aria-label="X"><i class="ph ph-x-logo"></i></a>
+            <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Equipment Financing</a></li>
+            <li><a href="services.html">Working Capital</a></li>
+            <li><a href="services.html">Lines of Credit</a></li>
+            <li><a href="services.html">Commercial Loans</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Client Portal</a></li>
+            <li><a href="loan-calculator.html">Loan Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-newsletter-col">
+          <h4 class="footer-col-title">Stay Informed</h4>
+          <p class="newsletter-desc">Subscribe to receive market trends, rate updates, and capital strategy guides.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to FastFund!');">
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="Enter your business email" required aria-label="Email Address">
+              <button type="submit" aria-label="Subscribe"><i class="ph ph-arrow-right"></i></button>
+            </div>
+          </form>
+          <div class="footer-badge">
+            <i class="ph ph-shield-check"></i>
+            <span>256-Bit Bank Grade Encryption</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 FastFund Brokerage LLC. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#">Terms of Service</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

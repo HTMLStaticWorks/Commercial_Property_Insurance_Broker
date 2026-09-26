@@ -1362,6 +1362,37 @@ html[dir="rtl"] .card-link:hover i { transform: scaleX(-1) translateX(4px); }
 .step h4 { margin-block-end: var(--sp-2); }
 .step p { margin-block: 0; }
 
+.step-image-wrap {
+  width: 100%;
+  height: clamp(180px, 20vw, 220px);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-block-end: var(--sp-5);
+  background: var(--surface);
+  position: relative;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.step-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+
+.step:hover .step-image-wrap {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+}
+
+.step:hover .step-img {
+  transform: scale(1.05);
+}
+
 /* Same rhythm as the three-card rows: 2 x 1 with the third centred, then one by one */
 @media (min-width: 601px) and (max-width: 1023.98px) {
   .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: var(--sp-12); }
@@ -2650,6 +2681,41 @@ html[data-theme="dark"] .map-panel iframe {
   border-block-start: 1px solid var(--line);
 }
 
+.sidebar-toggles {
+  display: none;
+  align-items: center;
+  gap: var(--sp-3);
+  padding-inline: var(--sp-2);
+  margin-block-end: var(--sp-4);
+  padding-block-end: var(--sp-4);
+  border-block-end: 1px solid var(--line);
+}
+
+.sidebar-toggles .icon-btn,
+.drawer-toggles .icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.sidebar-toggles .icon-btn:hover,
+.drawer-toggles .icon-btn:hover {
+  background: var(--surface-raised);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
 .sidebar-backdrop {
   position: fixed;
   inset: 0;
@@ -3275,6 +3341,9 @@ html[data-theme="dark"] .map-panel iframe {
 
   .dash-header { inset-inline-start: 0; padding-inline: var(--sp-4); }
   .dash-header .icon-btn { width: 36px; height: 36px; font-size: 1rem; }
+  .dash-header .theme-toggle,
+  .dash-header .rtl-toggle { display: none !important; }
+  .sidebar-toggles { display: flex; }
   .avatar-btn { width: 36px; height: 36px; font-size: 0.95rem; }
   .dash-header-start .logo { display: inline-flex; }
   .dash-menu-btn { display: inline-grid; }
